@@ -1,10 +1,26 @@
 ## PA Rails 1
 
+#### Deliverables
+
 [Heroku Project Link](https://desolate-falls-68235.herokuapp.com/)
 
-Github Project Link (Private)
+[Github Project Link](https://github.com/jsmith2021Brandeis/PARails1) (Private)
 
-#### **Views**
+Note on Bootstrap:
+
+​	I changed the title font to Wallpoet,see app/assets/stylesheets/custom.scss
+
+![Home](images/custom.PNG)
+
+
+
+#### Description
+
+​	This project imports [data on Brandeis bourses, subjects, and instructors](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html) into a ruby on rails app that displays the information and is deployed to Heroku.
+
+#### Views
+
+![courses](images/home.PNG)
 
 ![courses](images/courses.PNG)
 
