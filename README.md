@@ -1,24 +1,21 @@
-# README
+## PA Rails 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Heroku Project Link](https://desolate-falls-68235.herokuapp.com/)
 
-Things you may want to cover:
+Github Project Link (Private)
 
-* Ruby version
+#### **Views**
 
-* System dependencies
+![courses](images/courses.PNG)
 
-* Configuration
+![subjects](images/subjects.PNG)
 
-* Database creation
+![instructors](images/instructors.PNG)
 
-* Database initialization
+#### Scaffolds used
 
-* How to run the test suite
+`rails generate scaffold Course code:string name:string description:string requirements:string`
+`rails generate scaffold Instructor instructor_id:integer email:string first:string last:string`
+`rails generate scaffold Subject subject_id:string name:string`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-Jacob Smith COSI 166 B Spring 2021
