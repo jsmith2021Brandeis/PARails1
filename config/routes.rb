@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :courses
   resources :subjects
   get 'static_pages/subjects'
@@ -6,5 +7,7 @@ Rails.application.routes.draw do
   get 'static_pages/instructors'
   resources :instructors
   root 'welcome#index'
+  get '/signup', to: 'users#new'
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
