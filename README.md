@@ -52,6 +52,8 @@ Scaffolds Used
 
 ```
 rails generate scaffold User name:string email:string password_digest:string
+
+rails generate controller Sessions
 ```
 
 adding entry in rails console  a=User.new(name:"A" ,email:"B", password_digest:"C") 

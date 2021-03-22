@@ -43,6 +43,8 @@ data_hash.each do |subject|
 end
 
 # manual User creation
+# create admin user for easy testing
+User.create(name:"John Brown", email:"brown@brandeis.edu", password:"123456", password_confirmation:"123456")
 for i in 0..5 do
   last_name=Faker::Name.last_name
   password=Faker::Internet.password(min_length: 6)
