@@ -34,4 +34,28 @@ Note on Bootstrap:
 `rails generate scaffold Instructor instructor_id:integer email:string first:string last:string`
 `rails generate scaffold Subject subject_id:string name:string`
 
--Jacob Smith COSI 166 B Spring 2021
+
+
+
+
+#### PA Rails 2
+
+Following this [authentication](https://hackernoon.com/building-a-simple-session-based-authentication-using-ruby-on-rails-9tah3y4j) tutorial (also includes CSS)
+
+and add Enrollment from my [March 5 recitation assignemnt](https://github.com/jsmith2021Brandeis/Many-To-Many-March-5) (private link)
+
+[form helpers](https://guides.rubyonrails.org/form_helpers.html)
+
+possibly RORT chapter 8
+
+Scaffolds Used
+
+```
+rails generate scaffold User name:string email:string password_digest:string
+```
+
+adding entry in rails console  a=User.new(name:"A" ,email:"B", password_digest:"C") 
+
+-Jacob Smith 
+
+COSI 166 B Spring 2021

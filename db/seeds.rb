@@ -4,6 +4,12 @@ puts "Takes 15 seconds on my computer"
 Course.delete_all
 Instructor.delete_all
 Subject.delete_all
+User.delete_all
+
+# Reset the Primary Keys
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 require 'json'
 
@@ -29,7 +35,19 @@ data_hash.each do |subject|
   Subject.create(subject_id:subject["id"], name:subject["name"])
 end
 
-# manual seed creation
+# create example Users
+file = File.read('db/data/subject.json')
+data_hash = JSON.parse(file)
+data_hash.each do |subject|
+  Subject.create(subject_id:subject["id"], name:subject["name"])
+end
+
+# manual User creation
+for i in 0..5 do
+  last_name=Faker::Name.last_name
+  password=Faker::Internet.password(min_length: 6)
+  User.create(name:Faker::Name.first_name+" "+last_name, email:last_name+"@"+Faker::Internet.domain_name, password:password, password_confirmation:password)
+end
 
 # Course.create(code: 1, name: "Capstone Project", description: "Learn to code", requirements:"SN EL")
 # Course.create(code: 2, name: "Biblical Hebrew", description: "Learn ancient grammar", requirements:"FL SS")
