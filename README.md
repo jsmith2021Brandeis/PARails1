@@ -58,6 +58,8 @@ rails generate controller Sessions
 
 adding entry in rails console  a=User.new(name:"A" ,email:"B", password_digest:"C") 
 
+for search page used [this](https://stackoverflow.com/questions/5911794/adding-a-new-page-in-ruby-on-rails), but rails g controller search might have been better
+
 -Jacob Smith 
 
 COSI 166 B Spring 2021
