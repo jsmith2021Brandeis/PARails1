@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
     def search()
-      if !params["query"].blank?
-        searched_courses=Course.search(params["query"])
+      @subjects=Subject.all()
+      if !params["query"].blank? || !params["subject"].blank?
+        searched_courses=Course.search(params["query"],params["subject"])
         if searched_courses.size>0
           $courses=searched_courses
           $new_courses_search=TRUE

@@ -27,9 +27,9 @@ data_hash.sort_by! { |course|
                       num="0"*(num.tr('^0-9',- '').length*-1+3)+num
                       code=name+" "+num
                     }
-
 data_hash.each do |course|
-  Course.create(code: course["code"], name: course["name"], description: course["description"], requirements: course["requirements"].join(" "))
+  # only storing first subject of course
+  Course.create(code: course["code"], name: course["name"], description: course["description"], requirements: course["requirements"].join(" "),subject_id: course["subjects"].first["id"])
 end
 
 # load instructors from json file
@@ -42,6 +42,11 @@ end
 # load subjects from json file
 file = File.read('db/data/subject.json')
 data_hash = JSON.parse(file)
+# sort the subjects alphabetically
+data_hash.sort_by! { |subject| 
+  subject["name"]
+}
+
 data_hash.each do |subject|
   Subject.create(subject_id:subject["id"], name:subject["name"])
 end

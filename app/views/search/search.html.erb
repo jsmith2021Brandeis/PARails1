@@ -2,5 +2,12 @@
 <%= form_with url: "/search", method: :get do |form| %>
   <%= form.label :query, "Search for:" %>
   <%= form.text_field :query %>
+  <select name="subject">
+  <option value="<%= -1 %>"><%= "Subject: Any" %></option>
+  <%= @subjects.each do |subject| %>
+      <option value="<%= subject.subject_id %>"><%=  subject.name %></option>
+    <% end %>
+    </select>
   <%= form.submit "Search" %>
 <% end %>
+
