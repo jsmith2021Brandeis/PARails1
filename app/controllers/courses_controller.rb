@@ -3,7 +3,14 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    #debugger
+    @courses=$courses
+    if $new_courses_search
+      @courses=$courses
+      $new_courses_search=FALSE
+    else
+      @courses = Course.all
+    end
   end
 
   # GET /courses/1 or /courses/1.json
