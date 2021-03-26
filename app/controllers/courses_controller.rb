@@ -13,6 +13,14 @@ class CoursesController < ApplicationController
     end
   end
 
+  #enroll a user in a course
+  def enroll
+    Enrollment.create(user_id: current_user.id, course_id: @course.id)
+    redirect_to "/users/#{current_user.id}"
+  end
+  helper_method :enroll
+
+
   # GET /courses/1 or /courses/1.json
   def show
   end

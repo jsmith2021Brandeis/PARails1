@@ -64,12 +64,16 @@ end
 
 #manual enrollment creation
 for i in 1..num_users do
+  # keeping track of the previously selected course to guarantee user isn't enrolled in the same class
   random_course=([*1..num_courses]).sample
   Enrollment.create(user_id: i, course_id: random_course)
   random_course_2=([*1..num_courses]-[random_course]).sample
-  Enrollment.create(user_id: i, course_id: random_course)
+  Enrollment.create(user_id: i, course_id: random_course_2)
+  random_course_3=([*1..num_courses]-[random_course,random_course_2]).sample
+  Enrollment.create(user_id: i, course_id: random_course_3)
 end
 
+# manual course instructor and subject creation
 # Course.create(code: 1, name: "Capstone Project", description: "Learn to code", requirements:"SN EL")
 # Course.create(code: 2, name: "Biblical Hebrew", description: "Learn ancient grammar", requirements:"FL SS")
 # Course.create(code: 3, name: "History of Judaism", description: "Learn about Babylon", requirements:"HUM")

@@ -89,9 +89,11 @@ Nice things I did
 
  flash error message if search fails
 
- can't view other user's profile 
+ can't view other user's profile, dynamic log out/signup 
 
-​	
+link to your own profile
+
+​	instructors, enrollments, users
 
 
 
